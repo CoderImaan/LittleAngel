@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest news, notices, upcoming events and school calendar from Little Angel Pre Primary School.">
+  <title>News & Events | Little Angel Pre Primary School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👼</text></svg>">
+  <style>
+    .news-card { background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); border:2px solid var(--border); transition:all .3s ease; height:100%; }
+    .news-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:var(--primary); }
+    .news-thumb { height:160px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .news-body { padding:20px; }
+    .news-meta { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+    .news-tag { font-size:.72rem; font-weight:800; padding:3px 12px; border-radius:50px; display:inline-block; }
+    .news-date-sm { font-size:.78rem; color:var(--text-light); display:flex; align-items:center; gap:4px; }
+    .news-card h5 { font-size:1rem; color:var(--navy); margin-bottom:8px; line-height:1.4; }
+    .news-card p { font-size:.85rem; color:var(--text-mid); margin:0; }
+    .event-row { display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--border); }
+    .event-row:last-child { border:none; }
+    .event-date-box { min-width:56px; text-align:center; background:var(--navy); color:white; border-radius:var(--radius-sm); padding:8px 10px; flex-shrink:0; }
+    .event-date-box .eday { font-family:var(--font-display); font-size:1.5rem; font-weight:900; line-height:1; display:block; }
+    .event-date-box .emon { font-size:.65rem; text-transform:uppercase; letter-spacing:.08em; }
+    .event-content h6 { font-size:.95rem; color:var(--navy); margin-bottom:4px; }
+    .event-content p { font-size:.82rem; color:var(--text-mid); margin:0; }
+    .event-badge { font-size:.7rem; font-weight:800; padding:2px 10px; border-radius:50px; margin-top:5px; display:inline-block; }
+    .cal-table td, .cal-table th { text-align:center; vertical-align:middle; font-size:.85rem; }
+    .cal-table .holiday { background:#FEE2E2 !important; color:#991B1B; font-weight:700; }
+    .cal-table .event-day { background:#D1FAE5 !important; color:#065F46; font-weight:700; }
+    .cal-table .exam-day { background:#DBEAFE !important; color:#1E40AF; font-weight:700; }
+  </style>
+</head>
+<body>
+
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    <span class="marquee-item"><i class="bi bi-calendar-event-fill"></i> Annual Sports Day – 15 July 2026</span>
+    <span class="marquee-item"><i class="bi bi-star-fill"></i> Admissions Open 2026–27</span>
+    <span class="marquee-item"><i class="bi bi-bell-fill"></i> PTM – 5 July 2026</span>
+    <span class="marquee-item"><i class="bi bi-calendar-event-fill"></i> Annual Sports Day – 15 July 2026</span>
+    <span class="marquee-item"><i class="bi bi-star-fill"></i> Admissions Open 2026–27</span>
+    <span class="marquee-item"><i class="bi bi-bell-fill"></i> PTM – 5 July 2026</span>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <div class="school-logo-circle">👼</div>
+      <div class="navbar-brand-text">Little Angel<span>Pre Primary School</span></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+        <li class="nav-item"><a class="nav-link active" href="news.html">News & Events</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html"><i class="bi bi-envelope-fill"></i> Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="badge-pill">📰 Stay Updated</div>
+    <h1>News & Events</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-item active">News & Events</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- Latest News -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="badge-pill">Latest</div>
+      <h2 class="section-title">School News & Highlights</h2>
+      <p class="section-sub">Stay informed with the latest happenings at Little Angel Pre Primary School.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 fade-in-up">
+        <div class="news-card">
+          <div class="news-thumb" style="background:linear-gradient(135deg,#FFF0E8,#FFD9BF)">🏆</div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-tag" style="background:#FEF3C7;color:#92400E">Award</span>
+              <span class="news-date-sm"><i class="bi bi-calendar3"></i> 10 June 2026</span>
+            </div>
+            <h5>Little Angel Wins Best Pre-Primary School Award 2026</h5>
+            <p>We are thrilled to announce that Little Angel Pre Primary School has been awarded the 'Best Pre-Primary School – Pimpri-Chinchwad' award at the PCMC Education Excellence Awards ceremony.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-in-up" style="transition-delay:.1s">
+        <div class="news-card">
+          <div class="news-thumb" style="background:linear-gradient(135deg,#D1FAE5,#A7F3D0)">🌱</div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-tag" style="background:#D1FAE5;color:#065F46">Initiative</span>
+              <span class="news-date-sm"><i class="bi bi-calendar3"></i> 5 June 2026</span>
+            </div>
+            <h5>Green School Initiative – 100 Saplings Planted on World Environment Day</h5>
+            <p>Our students and parents joined hands to plant 100 saplings across our campus and neighbouring society. The UKG children adopted their own plants to nurture through the year.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-in-up" style="transition-delay:.2s">
+        <div class="news-card">
+          <div class="news-thumb" style="background:linear-gradient(135deg,#DBEAFE,#BAD6FC)">🎓</div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-tag" style="background:#DBEAFE;color:#1E40AF">Academic</span>
+              <span class="news-date-sm"><i class="bi bi-calendar3"></i> 28 May 2026</span>
+            </div>
+            <h5>UKG Graduation Day 2026–26 (Previous Session) – A Proud Milestone</h5>
+            <p>68 little graduates received their certificates on Graduation Day 2026–26 (Previous Session). Parents, grandparents, and teachers joined in the celebration of this beautiful milestone in every child's life.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-in-up" style="transition-delay:.1s">
+        <div class="news-card">
+          <div class="news-thumb" style="background:linear-gradient(135deg,#F3E8FF,#E9D5FF)">🎨</div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-tag" style="background:#F3E8FF;color:#7E22CE">Art</span>
+              <span class="news-date-sm"><i class="bi bi-calendar3"></i> 12 May 2026</span>
+            </div>
+            <h5>Colours of Joy – Inter-School Art Competition Winners</h5>
+            <p>Three students from our school won prizes at the Colours of Joy Inter-School Art Competition. Arya Sharma (UKG) won the Gold Medal in the under-6 category.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-in-up" style="transition-delay:.2s">
+        <div class="news-card">
+          <div class="news-thumb" style="background:linear-gradient(135deg,#FFD6E7,#FFADD1)">❤️</div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-tag" style="background:#FFD6E7;color:#9D174D">Community</span>
+              <span class="news-date-sm"><i class="bi bi-calendar3"></i> 1 May 2026</span>
+            </div>
+            <h5>Little Angels Give Back – Stationery Drive for Underprivileged Children</h5>
+            <p>Our students and parents donated over 500 notebooks and stationery items to the Bal Aashram shelter home. Teaching compassion alongside academics is our core philosophy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-in-up" style="transition-delay:.3s">
+        <div class="news-card">
+          <div class="news-thumb" style="background:linear-gradient(135deg,#FEF3C7,#FDE68A)">🧠</div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-tag" style="background:#FEF3C7;color:#92400E">Workshop</span>
+              <span class="news-date-sm"><i class="bi bi-calendar3"></i> 20 Apr 2026</span>
+            </div>
+            <h5>Faculty Training Workshop – Neuroscience of Early Childhood Learning</h5>
+            <p>Our entire faculty attended a 2-day workshop by Dr. Priya Nair (Child Neuropsychologist) on brain-based learning strategies for ages 2–6. We invest in our teachers to invest in your children.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events & Calendar -->
+<section class="section section-light">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Upcoming Events -->
+      <div class="col-lg-5">
+        <div class="badge-pill">What's Coming</div>
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="contact-card" style="padding:0;overflow:hidden">
+          <div style="padding:0 24px">
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">01</span><span class="emon">Jul</span></div>
+              <div class="event-content">
+                <h6>New Session Begins – 2026–27</h6>
+                <p>School timings: 8:30 AM – 12:30 PM (LKG/UKG); 8:30 AM – 11:30 AM (Nursery)</p>
+                <span class="event-badge" style="background:#D1FAE5;color:#065F46">Academic</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box" style="background:var(--primary)"><span class="eday">05</span><span class="emon">Jul</span></div>
+              <div class="event-content">
+                <h6>Parent-Teacher Meeting – All Classes</h6>
+                <p>10:00 AM – 1:00 PM | Book your slot via WhatsApp message</p>
+                <span class="event-badge" style="background:#DBEAFE;color:#1E40AF">Meeting</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">15</span><span class="emon">Jul</span></div>
+              <div class="event-content">
+                <h6>Annual Sports Day 2026</h6>
+                <p>Report by 8:00 AM. Parents invited. Sports kit compulsory.</p>
+                <span class="event-badge" style="background:#FEF3C7;color:#92400E">🏅 Sports</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">15</span><span class="emon">Aug</span></div>
+              <div class="event-content">
+                <h6>Independence Day Celebration</h6>
+                <p>Flag hoisting at 8:00 AM. Patriotic performances by all classes.</p>
+                <span class="event-badge" style="background:#FEE2E2;color:#991B1B">🇮🇳 National</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">05</span><span class="emon">Sep</span></div>
+              <div class="event-content">
+                <h6>Teachers' Day Celebration</h6>
+                <p>Children perform and celebrate their beloved teachers.</p>
+                <span class="event-badge" style="background:#F3E8FF;color:#7E22CE">Special</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">01</span><span class="emon">Oct</span></div>
+              <div class="event-content">
+                <h6>Q2 Fees Due Date</h6>
+                <p>Second-quarter tuition fee payment due for all programs.</p>
+                <span class="event-badge" style="background:#FEE2E2;color:#991B1B">Important</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">22</span><span class="emon">Oct</span></div>
+              <div class="event-content">
+                <h6>Diwali Vacation – 22 Oct to 1 Nov</h6>
+                <p>School resumes 3 November 2026.</p>
+                <span class="event-badge" style="background:#FFF3CC;color:#92400E">🪔 Holiday</span>
+              </div>
+            </div>
+            <div class="event-row">
+              <div class="event-date-box"><span class="eday">20</span><span class="emon">Dec</span></div>
+              <div class="event-content">
+                <h6>Annual Day 2026 – Grand Celebration</h6>
+                <p>Cultural extravaganza with performances, prize distribution, and family dinner.</p>
+                <span class="event-badge" style="background:#FFD6E7;color:#9D174D">🎭 Annual Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- School Calendar -->
+      <div class="col-lg-7">
+        <div class="badge-pill">Academic Year</div>
+        <h2 class="section-title">School Calendar 2026–27</h2>
+
+        <div class="mb-4 d-flex gap-3 flex-wrap">
+          <span style="display:flex;align-items:center;gap:6px;font-size:.82rem"><span style="width:14px;height:14px;border-radius:3px;background:#FEE2E2;display:inline-block"></span> Holiday / Vacation</span>
+          <span style="display:flex;align-items:center;gap:6px;font-size:.82rem"><span style="width:14px;height:14px;border-radius:3px;background:#D1FAE5;display:inline-block"></span> School Event</span>
+          <span style="display:flex;align-items:center;gap:6px;font-size:.82rem"><span style="width:14px;height:14px;border-radius:3px;background:#DBEAFE;display:inline-block"></span> Assessment / PTM</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-bordered cal-table">
+            <thead style="background:var(--navy);color:white">
+              <tr>
+                <th>Month</th>
+                <th>Key Dates</th>
+                <th>Activity</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>July 2026</strong></td><td>1 Jul</td><td>Session Begins</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Event</span></td></tr>
+              <tr><td></td><td>5 Jul</td><td>Parent-Teacher Meeting</td><td><span class="event-badge" style="background:#DBEAFE;color:#1E40AF">PTM</span></td></tr>
+              <tr><td></td><td>15 Jul</td><td>Annual Sports Day</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Event</span></td></tr>
+              <tr><td><strong>August 2026</strong></td><td>15 Aug</td><td>Independence Day</td><td><span class="event-badge" style="background:#FEE2E2;color:#991B1B">Holiday</span></td></tr>
+              <tr><td></td><td>25–29 Aug</td><td>Ganesh Utsav Break</td><td><span class="event-badge" style="background:#FEE2E2;color:#991B1B">Holiday</span></td></tr>
+              <tr><td><strong>September 2026</strong></td><td>5 Sep</td><td>Teachers' Day</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Event</span></td></tr>
+              <tr><td></td><td>20 Sep</td><td>Q1 Assessment Week</td><td><span class="event-badge" style="background:#DBEAFE;color:#1E40AF">Assessment</span></td></tr>
+              <tr><td><strong>October 2026</strong></td><td>1 Oct</td><td>Q2 Fees Due</td><td><span class="event-badge" style="background:#FEF3C7;color:#92400E">Admin</span></td></tr>
+              <tr><td></td><td>2 Oct</td><td>Gandhi Jayanti Holiday</td><td><span class="event-badge" style="background:#FEE2E2;color:#991B1B">Holiday</span></td></tr>
+              <tr><td></td><td>22 Oct – 1 Nov</td><td>Diwali Vacation</td><td><span class="event-badge" style="background:#FEE2E2;color:#991B1B">Holiday</span></td></tr>
+              <tr><td><strong>November 2026</strong></td><td>3 Nov</td><td>School Resumes</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Academic</span></td></tr>
+              <tr><td></td><td>15 Nov</td><td>Parent-Teacher Meeting</td><td><span class="event-badge" style="background:#DBEAFE;color:#1E40AF">PTM</span></td></tr>
+              <tr><td><strong>December 2026</strong></td><td>20 Dec</td><td>Annual Day Grand Event</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Event</span></td></tr>
+              <tr><td></td><td>24 Dec – 2 Jan</td><td>Winter Vacation</td><td><span class="event-badge" style="background:#FEE2E2;color:#991B1B">Holiday</span></td></tr>
+              <tr><td><strong>January 2026</strong></td><td>5 Jan</td><td>School Resumes</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Academic</span></td></tr>
+              <tr><td></td><td>26 Jan</td><td>Republic Day</td><td><span class="event-badge" style="background:#FEE2E2;color:#991B1B">Holiday</span></td></tr>
+              <tr><td><strong>February 2026</strong></td><td>14 Feb</td><td>Grandparents' Day</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Event</span></td></tr>
+              <tr><td><strong>March 2026</strong></td><td>1–15 Mar</td><td>End-of-Year Assessment</td><td><span class="event-badge" style="background:#DBEAFE;color:#1E40AF">Assessment</span></td></tr>
+              <tr><td></td><td>25 Mar</td><td>UKG Graduation Day</td><td><span class="event-badge" style="background:#D1FAE5;color:#065F46">Event</span></td></tr>
+              <tr><td></td><td>31 Mar</td><td>Session Ends</td><td><span class="event-badge" style="background:#FEF3C7;color:#92400E">Academic</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Notice Board Full -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="badge-pill">Official Notices</div>
+      <h2 class="section-title">Notice Board</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="contact-card" style="padding:24px">
+          <div class="notice-item">
+            <div class="notice-date"><span class="day">10</span><span class="month">Jul</span></div>
+            <div class="notice-content"><h6>⚠️ Q2 Fee Reminder</h6><p>Second quarter fees are due by 10 July 2026. Pay via school UPI or at the office. Late payments attract ₹200/month penalty.</p><span class="notice-tag" style="background:#FEE2E2;color:#991B1B">Important</span></div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-date"><span class="day">15</span><span class="month">Jul</span></div>
+            <div class="notice-content"><h6>🏅 Annual Sports Day – Dress Code</h6><p>All students must wear their school sports kit. Students with medical conditions should bring a note from their doctor. Report time: 8:00 AM sharp.</p><span class="notice-tag" style="background:#FEF3C7;color:#92400E">Event</span></div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-date"><span class="day">01</span><span class="month">Jul</span></div>
+            <div class="notice-content"><h6>📚 New Session Timings 2026–27</h6><p>Nursery: 8:30–11:30 AM | LKG & UKG: 8:30 AM–12:30 PM | After-School Care: till 4:00 PM (extra charges apply).</p><span class="notice-tag" style="background:#D1FAE5;color:#065F46">Academic</span></div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-date"><span class="day">28</span><span class="month">Jun</span></div>
+            <div class="notice-content"><h6>📱 Parent App Mandatory from 2026–27</h6><p>All parents must install the Little Angel Parent App for daily updates, attendance, and teacher communication. Download link sent on registered WhatsApp numbers.</p><span class="notice-tag" style="background:#DBEAFE;color:#1E40AF">Digital</span></div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-date"><span class="day">20</span><span class="month">Jun</span></div>
+            <div class="notice-content"><h6>🏫 School Kit Distribution Schedule</h6><p>School kits (books, bag, water bottle, ID card) will be distributed on 25–26 June 2026. Collect between 9 AM – 12 PM. Bring original fee receipt.</p><span class="notice-tag" style="background:#D1FAE5;color:#065F46">Academic</span></div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-date"><span class="day">10</span><span class="month">Jun</span></div>
+            <div class="notice-content"><h6>🚌 Transport Route Changes – 2026–27</h6><p>Transport route B (Akurdi–Nigdi) has been revised. New timings and stop details sent via WhatsApp. Contact Mr. Rahul Kumar for queries.</p><span class="notice-tag" style="background:#FEF3C7;color:#92400E">Transport</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <h2>Never Miss an Update!</h2>
+    <p>Follow us on WhatsApp and social media for real-time school updates and photos.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="https://wa.me/9198765432XX" class="btn-outline-custom" style="border-color:white;color:white"><i class="bi bi-whatsapp"></i> Join WhatsApp Group</a>
+      <a href="#" class="btn-outline-custom" style="border-color:white;color:white"><i class="bi bi-instagram"></i> Follow on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand d-flex align-items-center gap-3">
+          <div class="school-logo-circle">👼</div>
+          <div class="navbar-brand-text footer-brand-text">Little Angel<span>Pre Primary School</span></div>
+        </div>
+        <p>Nurturing young minds since 2005.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2"><h6>Quick Links</h6><ul><li><a href="../index.html"><i class="bi bi-chevron-right"></i> Home</a></li><li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li><li><a href="programs.html"><i class="bi bi-chevron-right"></i> Programs</a></li><li><a href="admissions.html"><i class="bi bi-chevron-right"></i> Admissions</a></li></ul></div>
+      <div class="col-6 col-lg-2"><h6>Programs</h6><ul><li><a href="programs.html"><i class="bi bi-chevron-right"></i> Nursery</a></li><li><a href="programs.html"><i class="bi bi-chevron-right"></i> LKG</a></li><li><a href="programs.html"><i class="bi bi-chevron-right"></i> UKG</a></li></ul></div>
+      <div class="col-lg-4"><h6>Contact</h6><ul><li><a href="tel:+9198765432XX"><i class="bi bi-telephone-fill" style="color:var(--primary)"></i> +91 98765 432XX</a></li><li><a href="mailto:info@lumenaautomation.co.in"><i class="bi bi-envelope-fill" style="color:var(--primary)"></i> info@lumenaautomation.co.in</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container text-center">© 2026 Little Angel Pre Primary School. All rights reserved.</div></div>
+</footer>
+
+<button id="backToTop" title="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div id="cookieBanner" style="display:none"><span>🍪 We use cookies to enhance your experience.</span><button id="acceptCookie" class="btn btn-sm btn-warning fw-bold px-4 py-2 rounded-pill">Accept</button></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

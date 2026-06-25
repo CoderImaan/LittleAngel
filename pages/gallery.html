@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photo gallery of Little Angel Pre Primary School – events, classroom activities, sports day, annual day and more.">
+  <title>Gallery | Little Angel Pre Primary School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👼</text></svg>">
+  <style>
+    .filter-btn { background: var(--white); border: 2px solid var(--border); color: var(--navy); font-weight: 700; font-size: 0.85rem; padding: 8px 20px; border-radius: 50px; cursor: pointer; transition: all .25s; }
+    .filter-btn:hover, .filter-btn.active { background: var(--primary); border-color: var(--primary); color: var(--white); }
+    .gallery-masonry { columns: 3; gap: 16px; }
+    @media(max-width:768px){ .gallery-masonry{ columns:2; } }
+    @media(max-width:480px){ .gallery-masonry{ columns:1; } }
+    .gallery-tile { break-inside: avoid; margin-bottom: 16px; border-radius: var(--radius); overflow: hidden; position: relative; cursor: pointer; }
+    .gallery-tile .tile-inner { display: flex; align-items: center; justify-content: center; font-size: 5rem; transition: transform .4s ease; }
+    .gallery-tile:hover .tile-inner { transform: scale(1.06); }
+    .tile-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15,31,53,.85)); color: white; padding: 24px 16px 14px; font-size: .82rem; font-weight: 700; transform: translateY(100%); transition: transform .3s; }
+    .gallery-tile:hover .tile-caption { transform: translateY(0); }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(15,31,53,.95); z-index: 99999; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+    .lightbox.open { display: flex; }
+    .lb-inner { text-align: center; animation: lbZoom .3s ease; max-width: 90vw; }
+    .lb-emoji { font-size: min(20vw, 160px); line-height: 1; }
+    .lb-title { color: white; font-family: var(--font-display); font-size: 1.4rem; margin-top: 16px; }
+    .lb-cat { color: var(--accent); font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+    .lb-close { position: absolute; top: 24px; right: 24px; background: rgba(255,255,255,.1); border: none; color: white; width: 48px; height: 48px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; transition: background .25s; }
+    .lb-close:hover { background: var(--primary); }
+    @keyframes lbZoom { from{opacity:0;transform:scale(.8)} to{opacity:1;transform:scale(1)} }
+  </style>
+</head>
+<body>
+
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    <span class="marquee-item"><i class="bi bi-star-fill"></i> Admissions Open 2026–27</span>
+    <span class="marquee-item"><i class="bi bi-award-fill"></i> Best Pre-Primary School – PCMC 2026</span>
+    <span class="marquee-item"><i class="bi bi-telephone-fill"></i> Call: +91 98765 432XX</span>
+    <span class="marquee-item"><i class="bi bi-camera-fill"></i> Annual Day – 20 Dec 2026</span>
+    <span class="marquee-item"><i class="bi bi-star-fill"></i> Admissions Open 2026–27</span>
+    <span class="marquee-item"><i class="bi bi-award-fill"></i> Best Pre-Primary School – PCMC 2026</span>
+    <span class="marquee-item"><i class="bi bi-telephone-fill"></i> Call: +91 98765 432XX</span>
+    <span class="marquee-item"><i class="bi bi-camera-fill"></i> Annual Day – 20 Dec 2026</span>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="../index.html">
+      <div class="school-logo-circle">👼</div>
+      <div class="navbar-brand-text">Little Angel<span>Pre Primary School</span></div>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">News & Events</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="contact.html"><i class="bi bi-envelope-fill"></i> Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="badge-pill">📸 Our Memories</div>
+    <h1>School Gallery</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-item active">Gallery</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Filter Buttons -->
+    <div class="d-flex gap-2 flex-wrap justify-content-center mb-5">
+      <button class="filter-btn active" data-filter="all">All Photos</button>
+      <button class="filter-btn" data-filter="classroom">🏫 Classroom</button>
+      <button class="filter-btn" data-filter="events">🎉 Events</button>
+      <button class="filter-btn" data-filter="sports">🏅 Sports</button>
+      <button class="filter-btn" data-filter="art">🎨 Art & Craft</button>
+      <button class="filter-btn" data-filter="nature">🌿 Nature</button>
+      <button class="filter-btn" data-filter="festivals">🪔 Festivals</button>
+    </div>
+
+    <!-- Masonry Gallery -->
+    <div class="gallery-masonry" id="galleryGrid">
+
+      <!-- Classroom -->
+      <div class="gallery-tile" data-cat="classroom" data-label="Story Time – Nursery B" onclick="openLightbox('📖','Story Time – Nursery B','Classroom')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFE0CC,#FFC9A8);padding:48px 0;min-height:220px">📖</div>
+        <div class="tile-caption">📖 Story Time – Nursery B</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="events" data-label="Annual Day 2026 – Opening Act" onclick="openLightbox('🎭','Annual Day 2026 – Opening Act','Events')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#E8D5FF,#D4B0FF);padding:72px 0;min-height:300px">🎭</div>
+        <div class="tile-caption">🎭 Annual Day 2026</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="sports" data-label="Sports Day – Relay Race" onclick="openLightbox('🏃','Sports Day – Relay Race','Sports')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#C8F0EE,#A0E4E0);padding:48px 0;min-height:200px">🏃</div>
+        <div class="tile-caption">🏃 Sports Day – Relay Race</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="art" data-label="Finger Painting Workshop" onclick="openLightbox('🖌️','Finger Painting Workshop','Art & Craft')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFF3CC,#FFE88A);padding:56px 0;min-height:240px">🖌️</div>
+        <div class="tile-caption">🖌️ Finger Painting Workshop</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="festivals" data-label="Diwali Lantern Making" onclick="openLightbox('🪔','Diwali Lantern Making','Festivals')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFE0B2,#FFCC80);padding:48px 0;min-height:210px">🪔</div>
+        <div class="tile-caption">🪔 Diwali Lantern Making</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="nature" data-label="Garden Club – Planting Day" onclick="openLightbox('🌱','Garden Club – Planting Day','Nature')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#D4F4DD,#B0EAC0);padding:64px 0;min-height:280px">🌱</div>
+        <div class="tile-caption">🌱 Garden Club – Planting Day</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="classroom" data-label="Smart Board Math – LKG A" onclick="openLightbox('💻','Smart Board Math – LKG A','Classroom')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#DBEAFE,#BAD6FC);padding:52px 0;min-height:230px">💻</div>
+        <div class="tile-caption">💻 Smart Board Math – LKG</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="events" data-label="Independence Day – Flag Hoisting" onclick="openLightbox('🇮🇳','Independence Day Celebration','Events')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFE0CC,#FFCBA4);padding:60px 0;min-height:260px">🇮🇳</div>
+        <div class="tile-caption">🇮🇳 Independence Day 2026</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="art" data-label="Clay Modelling – UKG B" onclick="openLightbox('🏺','Clay Modelling – UKG B','Art & Craft')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#F3E8FF,#E9D5FF);padding:44px 0;min-height:200px">🏺</div>
+        <div class="tile-caption">🏺 Clay Modelling – UKG</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="sports" data-label="Yoga Day – All Classes" onclick="openLightbox('🧘','International Yoga Day','Sports')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#D1FAE5,#A7F3D0);padding:56px 0;min-height:240px">🧘</div>
+        <div class="tile-caption">🧘 International Yoga Day</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="festivals" data-label="Christmas Celebration 2026" onclick="openLightbox('🎄','Christmas Celebration 2026','Festivals')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#D4F4DD,#C7EDD4);padding:52px 0;min-height:225px">🎄</div>
+        <div class="tile-caption">🎄 Christmas Celebration 2026</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="classroom" data-label="Reading Corner – Nursery A" onclick="openLightbox('📚','Reading Corner – Nursery A','Classroom')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFF0E8,#FFE0CC);padding:48px 0;min-height:210px">📚</div>
+        <div class="tile-caption">📚 Reading Corner – Nursery</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="events" data-label="Graduation Day 2026" onclick="openLightbox('🎓','UKG Graduation Day 2026','Events')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FEF3C7,#FDE68A);padding:68px 0;min-height:290px">🎓</div>
+        <div class="tile-caption">🎓 UKG Graduation Day 2026</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="nature" data-label="Butterfly Garden Visit" onclick="openLightbox('🦋','Butterfly Garden Field Trip','Nature')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FDF4FF,#F3E8FF);padding:50px 0;min-height:215px">🦋</div>
+        <div class="tile-caption">🦋 Butterfly Garden Field Trip</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="art" data-label="Paper Craft – LKG B" onclick="openLightbox('✂️','Paper Craft Activity – LKG B','Art & Craft')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFD6E7,#FFB3D1);padding:48px 0;min-height:205px">✂️</div>
+        <div class="tile-caption">✂️ Paper Craft – LKG</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="sports" data-label="Sports Day – Prize Distribution" onclick="openLightbox('🏆','Sports Day Prize Distribution','Sports')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FEF9C3,#FDE68A);padding:60px 0;min-height:260px">🏆</div>
+        <div class="tile-caption">🏆 Sports Day – Prizes</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="festivals" data-label="Ganesh Utsav Craft" onclick="openLightbox('🙏','Ganesh Utsav – Eco Clay Craft','Festivals')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#FFF0E8,#FFD9BF);padding:44px 0;min-height:195px">🙏</div>
+        <div class="tile-caption">🙏 Ganesh Utsav Craft 2026</div>
+      </div>
+
+      <div class="gallery-tile" data-cat="classroom" data-label="Science Activity – Sink or Float" onclick="openLightbox('🔬','Science Activity – Sink or Float','Classroom')">
+        <div class="tile-inner" style="background:linear-gradient(135deg,#C8F0EE,#A0E0DC);padding:54px 0;min-height:235px">🔬</div>
+        <div class="tile-caption">🔬 Science Exploration – UKG</div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-5" id="noResults" style="display:none">
+      <div style="font-size:4rem">🔍</div>
+      <p style="color:var(--text-light)">No photos in this category yet. Check back soon!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()"><i class="bi bi-x-lg"></i></button>
+  <div class="lb-inner">
+    <div class="lb-emoji" id="lbEmoji">🎨</div>
+    <div class="lb-cat" id="lbCat">Category</div>
+    <div class="lb-title" id="lbTitle">Title</div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="container">
+    <h2>Want Your Child In These Photos?</h2>
+    <p>Enrol today and let your little one create memories that last a lifetime.</p>
+    <a href="admissions.html" class="btn-outline-custom" style="border-color:white;color:white"><i class="bi bi-pencil-square"></i> Apply for Admission</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand d-flex align-items-center gap-3">
+          <div class="school-logo-circle">👼</div>
+          <div class="navbar-brand-text footer-brand-text">Little Angel<span>Pre Primary School</span></div>
+        </div>
+        <p>Nurturing young minds since 2005.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="../index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+          <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Programs</a></li>
+          <li><a href="admissions.html"><i class="bi bi-chevron-right"></i> Admissions</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2"><h6>Programs</h6><ul><li><a href="programs.html"><i class="bi bi-chevron-right"></i> Nursery</a></li><li><a href="programs.html"><i class="bi bi-chevron-right"></i> LKG</a></li><li><a href="programs.html"><i class="bi bi-chevron-right"></i> UKG</a></li></ul></div>
+      <div class="col-lg-4"><h6>Contact</h6><ul><li><a href="tel:+9198765432XX"><i class="bi bi-telephone-fill" style="color:var(--primary)"></i> +91 98765 432XX</a></li><li><a href="mailto:info@lumenaautomation.co.in"><i class="bi bi-envelope-fill" style="color:var(--primary)"></i> info@lumenaautomation.co.in</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container text-center">© 2026 Little Angel Pre Primary School. All rights reserved.</div></div>
+</footer>
+
+<button id="backToTop" title="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div id="cookieBanner" style="display:none"><span>🍪 We use cookies to enhance your experience.</span><button id="acceptCookie" class="btn btn-sm btn-warning fw-bold px-4 py-2 rounded-pill">Accept</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      let visible = 0;
+      document.querySelectorAll('.gallery-tile').forEach(tile => {
+        const show = f === 'all' || tile.dataset.cat === f;
+        tile.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+
+  // Lightbox
+  function openLightbox(emoji, title, cat) {
+    document.getElementById('lbEmoji').textContent = emoji;
+    document.getElementById('lbTitle').textContent = title;
+    document.getElementById('lbCat').textContent = cat;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.currentTarget.tagName === 'BUTTON') {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')}); });
+</script>
+</body>
+</html>
